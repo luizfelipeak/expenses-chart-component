@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Expenses chart component</title>
+
+  <link rel="stylesheet" type="text/css" href="stylesheet.css">
+</head>
+<body>
+  <main>
+    <div class="balance">
+      <div class="balance__info">
+        <p class="balance__info__text">My balance</p>
+        <p class="balance__info__total">$921.48</p>
+      </div>
+
+      <svg width="72" height="48" viewBox="0 0 72 48" xmlns="http://www.w3.org/2000/svg" focusable="false" aria-hidden="true">
+        <g fill="none" fill-rule="evenodd">
+          <circle fill="#382314" cx="48" cy="24" r="24"/>
+          <circle stroke="#FFF" stroke-width="2" cx="24" cy="24" r="23"/>
+        </g>
+      </svg>
+    </div>
+
+    <div class="card">
+      <div class="card__chart">
+        <a href="#" class="card__chart__element">
+          <span class="card__chart__element__info" id="monday-info"></span>
+          <div class="card__chart__element__column" id="monday-graph"></div>
+          <p class="card__chart__element__day">mon</p>
+        </a>
+        
+        <a href="#" class="card__chart__element">
+          <span class="card__chart__element__info" id="tuesday-info"></span>
+          <div class="card__chart__element__column" id="tuesday-graph"></div>
+          <p class="card__chart__element__day">tue</p>
+        </a>
+        
+        <a href="#" class="card__chart__element">
+          <span class="card__chart__element__info" id="wednesday-info"></span>
+          <div class="card__chart__element__column" id="wednesday-graph"></div>
+          <p class="card__chart__element__day">wed</p>
+        </a>
+        
+        <a href="#" class="card__chart__element">
+          <span class="card__chart__element__info" id="thursday-info"></span>
+          <div class="card__chart__element__column" id="thursday-graph"></div>
+          <p class="card__chart__element__day">thu</p>
+        </a>
+        
+        <a href="#" class="card__chart__element">
+          <span class="card__chart__element__info" id="friday-info"></span>
+          <div class="card__chart__element__column" id="friday-graph"></div>
+          <p class="card__chart__element__day">fri</p>
+        </a>
+        
+        <a href="#" class="card__chart__element">
+          <span class="card__chart__element__info" id="saturday-info"></span>
+          <div class="card__chart__element__column" id="saturday-graph"></div>
+          <p class="card__chart__element__day">sat</p>
+        </a>
+        
+        <a href="#" class="card__chart__element">
+          <span class="card__chart__element__info" id="sunday-info"></span>
+          <div class="card__chart__element__column" id="sunday-graph"></div>
+          <p class="card__chart__element__day">sun</p>
+        </a>
+      </div>
+
+      <hr>
+
+      <div class="card__month-spend">
+        <div class="card__month-spend__total">
+          <p class="card__month-spend__total__text">Total this month</p>
+          <p class="card__month-spend__total__number">$478.33</p>
+        </div>
+
+        <div class="card__month-spend__percentage">
+          <p class="card__month-spend__percentage__number">+2.4%</p>
+          <p class="card__month-spend__percentage__text">from last month</p>
+        </div>
+      </div>
+    </div>
+  </main>
+  
+  <footer>
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="https://www.frontendmentor.io/profile/luizfelipeak" target="_blank">LuizFelipeAK</a>.
+    </div>
+  </footer>
+
+  <script src="index.js" type="module"></script>
+</body>
+</html>

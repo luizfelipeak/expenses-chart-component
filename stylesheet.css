@@ -1,0 +1,262 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap');
+
+:root {
+  --color-soft-red: hsl(10, 79%, 65%);
+  --color-cyan: hsl(186, 34%, 60%);
+  --color-dark-brown: hsl(25, 47%, 15%);
+  --color-medium-brown: hsl(28, 10%, 53%);
+  --color-cream: hsl(27, 66%, 92%);
+  --color-very-pale-orange: hsl(33, 100%, 98%);
+
+  --ff-main: 'DM Sans', sans-serif;
+
+  --border-radius: 0.5em;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+picture,
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  font-size: 18px;
+  font-family: var(--ff-main);
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  min-height: 100vh;
+  background-color: var(--color-cream);
+}
+
+main {
+  position: relative;
+}
+
+/* ----- Balance ----- */
+.balance {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em;
+  border-radius: var(--border-radius);
+  background-color: var(--color-soft-red);
+  margin-bottom: 1em;
+}
+
+.balance__info {
+  color: var(--color-cream);
+}
+
+.balance__info__text {
+  font-size: 1rem;
+}
+
+.balance__info__total {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+/* ----- Card ----- */
+.card {
+  display: grid;
+  gap: 1.5em;
+
+  border-radius: var(--border-radius);
+  background-color: var(--color-very-pale-orange);
+  padding: 1.5em 1em;
+}
+
+.card__spending-info {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-dark-brown);
+}
+
+.card__chart {
+  font-size: 0.85rem;
+  margin-top: 2em;
+}
+
+.card__chart__element {
+  color: var(--color-medium-brown);
+  text-decoration: none;
+  display: inline-block;
+  margin-inline: 0.35em;
+  position: relative;
+}
+
+.card__chart__element__info {
+  display: none;
+  position: absolute;
+  top: -2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.35em;
+  text-align: center;
+  color: var(--color-cream);
+  background-color: var(--color-dark-brown);
+  border-radius: var(--border-radius);
+  transition: opacity 0.35s ease;
+  opacity: 0;
+}
+
+.card__chart__element:hover .card__chart__element__info,
+.card__chart__element:focus-visible .card__chart__element__info {
+  opacity: 1;
+}
+
+.card__chart__element__column {
+  max-height: 9rem;
+  width: 2rem;
+  background-color: var(--color-soft-red);
+  border-radius: 0.25em;
+  transition: filter 0.35s ease;
+  animation: column-animation 0.75s ease;
+  transform-origin: bottom center;
+}
+
+.card__chart__element__column.current-day {
+  background-color: var(--color-cyan);
+}
+
+.card__chart__element:hover .card__chart__element__column,
+.card__chart__element:focus-visible .card__chart__element__column {
+  filter: brightness(1.25);
+}
+
+@keyframes column-animation {
+  0% {
+    transform: scaleY(0);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
+
+.card__chart__element__day {
+  text-align: center;
+  margin-top: 1em;
+}
+
+.card__chart + hr {
+  border-color: var(--color-cream);
+}
+
+.card__month-spend {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.card__month-spend__total__text {
+  font-size: 0.95rem;
+  color: var(--color-medium-brown);
+}
+
+.card__month-spend__total__number {
+  font-size: 1.85rem;
+  font-weight: 700;
+  color: var(--color-dark-brown);
+}
+
+.card__month-spend__percentage__number {
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-align: right;
+}
+
+.card__month-spend__percentage__text {
+  font-size: 0.95rem;
+  color: var(--color-medium-brown);
+}
+
+/* ----- Footer ----- */
+footer {
+  position: absolute;
+  bottom: 1rem;
+}
+
+.attribution {
+  font-size: 11px;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 64%);
+}
+
+.attribution a:visited {
+  color: hsl(270, 100%, 70%);
+}
+
+/* ----- Desktop ----- */
+@media (min-width: 43.75em) {
+  .balance {
+    padding: 1.5em;
+    --border-radius: 1em;
+  }
+
+  .balance__info__text {
+    font-size: 1.25rem;
+  }
+
+  .balance__info__total {
+    font-size: 2rem;
+  }
+
+  .card {
+    gap: 2em;
+    padding: 2.5em 2em;
+    --border-radius: 1em;
+  }
+
+  .card__spending-info {
+    font-size: 2rem;
+  }
+
+  .card__chart__element {
+    margin-inline: 0.5em;
+  }
+
+  .card__chart__element__info {
+    --border-radius: 0.5em;
+  }
+
+  .card__chart__element__column {
+    width: 3rem;
+  }
+
+  .card__month-spend__total__number {
+    font-size: 2.75rem;
+  }
+
+  .card__month-spend__total__text,
+  .card__month-spend__percentage__number,
+  .card__month-spend__percentage__text {
+    font-size: 1.2rem;
+  }
+}
